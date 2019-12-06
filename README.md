@@ -15,4 +15,4 @@ Leggere tutte le transazioni ragruppate per Customer  ---> http://<host>/<folder
 Leggere le transazioni di un determinato Customer  ---> http://<host>/<folder>/?filter=<filtro>
 
 * [Esempio con filtro](https://www.alessandrogiansante.com/test/transazioni/?filter=2) - tutte le transazioni del Customer 2
-* [Esempio senza filtro](https://www.alessandrogiansante.com/test/transazioni/?filter=2) - tutte le transazioni ragruppate per Customer 
+* [Esempio senza filtro](https://www.alessandrogiansante.com/test/transazioni/) - tutte le transazioni ragruppate per Customer 
