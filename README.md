@@ -38,7 +38,7 @@ Elencare tutte le transazione per nome utente ordinate per data
 php index.php   -w "nome utente"=Luca -o date=ASC
 
 
-Nota: sia i nome delle chiavi sia i nomi dei valori in questa versione sono case sensitive
+Nota: sia i nome delle chiavi sia i nomi dei valori in questa versione sono case sensitive, in questa versione la condizione where (-w) funziona solo con operatore =
 
 # Esempi WEB
 
