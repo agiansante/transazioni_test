@@ -32,7 +32,7 @@ php test.php -s customer,date,value  -o customer=DESC
 
 
 
-
+# Esempi WEB
 
 
 * [Esempio con filtro](https://www.alessandrogiansante.com/test/transazioni/?filter=2) - tutte le transazioni del Customer 2
