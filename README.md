@@ -23,7 +23,7 @@ php index.php -w customer=1 -o date=DESC
 
 --------------------------------------------------------------------------------------------------------------
 
-Elencare tutte le transazioni di un singolo customer ordinate per data ma senza visualizzare il campo data in TimeT
+Elencare tutte le transazioni di un singolo customer ordinate per data visualizzando solo alcuni campi
 
 php index.php -s customer,date,value  -w customer=1 -o date=DESC
 
