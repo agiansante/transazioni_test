@@ -4,7 +4,7 @@
 //Questa funzione recupera i dati da linea di comando e elabora i dati restituendo un array dati come risultato della Query
 
 // -s [select] passare i campi della select divisi da virgola ES: -s valore1,valore2  se non impostato eseguira la select su tutti i campi Select *
-// -w [whear]  filtra i campi in base una condizione  chiave valore ES: -w key=valore se non impostato non applica la condizione 
+// -w [where]  filtra i campi in base una condizione  chiave valore ES: -w key=valore se non impostato non applica la condizione 
 // -o [order by] ordina i risultati dato un campo può assumere valori ASC | DESC ES: -o key=DESC valore di default se non impostato DESC
 // -g [group by] ragruppa i dati in base ad un campo ES: -o key
 
@@ -31,7 +31,7 @@ class ElabDataCmd extends Gest_data
 	   {
 		   $data_get = getopt("s:w:o:g:");
 		   
-		   if (isset($data_get["s"]))//($data_get["s"]!="")
+		   if (isset($data_get["s"]))
 		   {
 			 $ret_array_select=$this->select_arr($this->_base_data,$data_get["s"]);
 			 

@@ -7,6 +7,8 @@ class Gest_data
 					//parametri in ingresso:
 					//data -> sorgente dati (tipo array)
 					//key -> elementi della select (tipo array)
+					//Output: (tipo array)
+	
 	
 					public function select_arr($data,$key_select) 
 					{

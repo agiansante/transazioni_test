@@ -15,7 +15,7 @@ class Acces_data
 		
     }
 	
-	//Sorgente dati CSV file->[nome del file] , delimiter->[delimitatore csv]
+	//Lettura Sorgente dati parametri CSV file->[nome del file] , delimiter->[delimitatore csv] output (array)
 	public function read_data_csv() 
 	{
 		try{
