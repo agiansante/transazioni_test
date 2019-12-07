@@ -41,7 +41,7 @@ php index.php -s customer,date,value  -o customer=DESC
 * [Esempio senza filtro](https://www.alessandrogiansante.com/test/transazioni/) - tutte le transazioni ragruppate per Customer 
 
 
-#Installazione
+# Installazione
 
 Copiare tutto il progetto in una cartella del webServer con supporto per linguaggio PHP
 
