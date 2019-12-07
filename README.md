@@ -4,7 +4,7 @@
 
 Import dati da file csv e possibilità di eseguire delle query sui dati tramite linea di comando, se il dato viene riconosciuto come valuta in base al segno e non è € allora esegue la conversione ad € (conversione finta in questa versione).
 
-E' possibile richiamare lo scricp anche da Browser (in questa versione la chiamata da Browser a un set ridotto di funzioni, chiamando lo script senza parametri restituisce un l'elenco delle transazioni ragruppate per customer, se si passa il parametro filter restituisce elenco transazioni di di qullo specifico customer)
+E' possibile richiamare lo scricp anche da Browser (in questa versione la chiamata da Browser a un set ridotto di funzioni, chiamando lo script senza parametri restituisce un l'elenco delle transazioni ragruppate per customer, se si passa il parametro filter restituisce elenco transazioni di di qullo specifico customer).
 
 E' possibile anche modificare il CSV aggiungendo colonne con altre tipologie di dati ed effettuari query anche su questi ultimi.
 
