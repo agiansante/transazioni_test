@@ -30,7 +30,7 @@ php index.php -s customer,date,value  -w customer=1 -o date=DESC
 --------------------------------------------------------------------------------------------------------------
 Elencare tutte le transazioni ordinate per data
 
-php index.php -s customer,date,value  -o customer=DESC
+php index.php -s customer,date,value  -o date=DESC
 
 --------------------------------------------------------------------------------------------------------------
 Elencare tutte le transazione per nome utente ordinate per data
