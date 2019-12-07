@@ -20,7 +20,7 @@ class Gest_data
 
 							foreach ($data_src as $dato) 
 							{
-
+											
 										foreach ($dato as $key => $value) 
 										{
 											if ( in_array($key, explode(",", $key_select)) )
@@ -77,7 +77,7 @@ class Gest_data
 
 						return $arr_group;
 
-				}
+					}
 
 
 					//Filter sui valori dell'array
@@ -95,12 +95,15 @@ class Gest_data
 								$value_filter = $value;
 								$arr_filter = array();
 								
+								
+								//*********Controllo se la chiave passata è esistente*****************
 								if (array_key_exists($key, $data_src[0])!==true)
 									{
 										echo "\n\n\n--> Attenzione chiave per la condizione where (-w) inesistente!!! <--\n\n\n";
 										return $arr_filter=array();	
 									}
-								
+								//*********Fine Controllo se la chiave passata è esistente*****************
+						
 
 								$arr_filter = array_filter($data_src, function ($item) use ($value_filter,$key_filter) 
 								{
@@ -130,11 +133,14 @@ class Gest_data
 					{
 								
 						
+								$data_src= $data;
+								
+								//*********Controllo se la chiave passata è esistente*****************
 								if (count($data)>=1)
 								{
 								
-									
-								if (array_key_exists($key, $data[0])!==true)
+								$firstKey = array_key_first($data_src);	
+								if (array_key_exists($key, $data_src[$firstKey])!==true)
 									{
 										
 										echo "\n\n\n--> Attenzione chiave per la condizione Order by (-o) inesistente!!! <--\n\n\n";
@@ -142,12 +148,15 @@ class Gest_data
 										
 									}	
 								}
+								//*********Fine Controllo se la chiave passata è esistente*****************
 						
-								$data_src= $data;
-
-								if (count($data_src)>0)
+								
+								
+						
+								if (count($data_src)>=1)
 								{
-									if (array_key_exists("timeT".$key, $data_src[0])===true)
+									$firstKey = array_key_first($data_src);
+									if (array_key_exists("timeT".$key, $data_src[$firstKey])===true)
 									{
 
 										$key="timeT".$key;
