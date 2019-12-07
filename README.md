@@ -39,3 +39,10 @@ php index.php -s customer,date,value  -o customer=DESC
 
 * [Esempio con filtro](https://www.alessandrogiansante.com/test/transazioni/?filter=2) - tutte le transazioni del Customer 2
 * [Esempio senza filtro](https://www.alessandrogiansante.com/test/transazioni/) - tutte le transazioni ragruppate per Customer 
+
+
+#Installazione
+
+Copiare tutto il progetto in una cartella del webServer con supporto per linguaggio PHP
+
+Testato con PHP 7.3.10
