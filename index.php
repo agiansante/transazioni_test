@@ -14,10 +14,13 @@ if ((isset($argc))AND(isset($argv[1])))
 	
 }else{
 
-	
+		if (strpos(php_sapi_name(), 'cli') === false) 
+	{
 		include_once("scripts/reportweb.php");
 
-	
+	}else{
+		echo "--> E' necessario inserire almeno un parametro <--";
+	}
 
 	
 }

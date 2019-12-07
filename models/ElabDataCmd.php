@@ -72,6 +72,9 @@ class ElabDataCmd extends Gest_data
 		   $ret_array_result=$ret_array_order;
 		   
 		   
+		   if (count($ret_array_result)===0)
+			   echo "--> I Criteri inseriti non hanno prodotto alcun risultato! <--";
+		   
 		   return $ret_array_result;
 		   
 		   

@@ -26,18 +26,20 @@ class Gest_data
 											if ( in_array($key, explode(",", $key_select)) )
 											{
 											$riga[$key]=$value;	
-		
-												// Da verificare-------------------------------
+												
+												//Se l'arrey ha settato un campo timeT lo riport nell'array filtrato per ordinare i campi di tipo data
+												//i campi timeT vnegono creati durante la lettura dei dati se si incontra una data classe DataAccess
+												// ---------------------------------------
 												if (array_key_exists("timeT".$key, $dato))
 												{
 												$keyT="timeT".$key;
 												$riga[$keyT]=$dato["timeT".$key];	
 												}
-												// Da verificare-------------------------------
+												// ---------------------------------------
 												
 											}		
 										}
-
+									
 							$righe[]=$riga;			
 
 							}	
@@ -92,7 +94,13 @@ class Gest_data
 								$key_filter = $key;
 								$value_filter = $value;
 								$arr_filter = array();
-
+								
+								if (array_key_exists($key, $data_src[0])!==true)
+									{
+										echo "\n\n\n--> Attenzione chiave per la condizione where (-w) inesistente!!! <--\n\n\n";
+										return $arr_filter=array();	
+									}
+								
 
 								$arr_filter = array_filter($data_src, function ($item) use ($value_filter,$key_filter) 
 								{
@@ -120,18 +128,32 @@ class Gest_data
 
 				public function order_by_key_arr($data,$key,$order="DESC") 
 					{
-
-
+								
+						
+								if (count($data)>=1)
+								{
+								
+									
+								if (array_key_exists($key, $data[0])!==true)
+									{
+										
+										echo "\n\n\n--> Attenzione chiave per la condizione Order by (-o) inesistente!!! <--\n\n\n";
+										return $data_src=array();	
+										
+									}	
+								}
+						
 								$data_src= $data;
 
-
-								if (array_key_exists("timeT".$key, $data_src[0])===true)
+								if (count($data_src)>0)
 								{
-									
-									$key="timeT".$key;
-									
+									if (array_key_exists("timeT".$key, $data_src[0])===true)
+									{
+
+										$key="timeT".$key;
+
+									}
 								}
-									
 
 
 
@@ -154,8 +176,8 @@ class Gest_data
 
 
 						return  $data_src;
-
-				}		
+			
+}		
 
 	
 			

@@ -22,19 +22,21 @@ foreach ($arry_result as $dato)
 	{
 		
 		echo "-->";
-		foreach ($dato as $key => $value) 
-		{
-			   preg_match("/([^0-9.,]*)([0-9.,]*)([^0-9.,]*)/", $value, $simbolo);
-			
-			   if ( in_array($simbolo[1], array('£','$')))  
-				{
-					$orig_value=$value;
-					$value=$obj_elab_cmd->convert_currency_to_eu($value) . " (orig: $orig_value)";
-				}
-				
-				if (substr($key,0,5)!="timeT")
-				echo " $key: $value ";
-		}
+		
+			foreach ($dato as $key => $value) 
+			{
+				   preg_match("/([^0-9.,]*)([0-9.,]*)([^0-9.,]*)/", $value, $simbolo);
+
+				   if ( in_array($simbolo[1], array('£','$')))  
+					{
+						$orig_value=$value;
+						$value=$obj_elab_cmd->convert_currency_to_eu($value) . " (orig: $orig_value)";
+					}
+
+					if (substr($key,0,5)!="timeT")
+					echo " $key: $value ";
+			}
+		
 		echo "\n";
 	}
 
