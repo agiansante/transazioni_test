@@ -32,7 +32,13 @@ Elencare tutte le transazioni ordinate per data
 
 php index.php -s customer,date,value  -o customer=DESC
 
+--------------------------------------------------------------------------------------------------------------
+Elencare tutte le transazione per nome utente ordinate per data
 
+php index.php   -w "nome utente"=Luca -o date=ASC
+
+
+Nota: sia i nome delle chiavi sia i nomi dei valori in questa versione sono case sensitive
 
 # Esempi WEB
 
