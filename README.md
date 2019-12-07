@@ -6,6 +6,8 @@ Import dati da file csv e possibilità di eseguire delle query sui dati tramite 
 
 E' possibile richiamare lo scricp anche da Browser (in questa versione la chiamata da Browser a un set ridotto di funzioni, chiamando lo script senza parametri restituisce un l'elenco delle transazioni ragruppate per customer, se si passa il parametro filter restituisce elenco transazioni di di qullo specifico customer)
 
+E' possibile anche modificare il CSV aggiungendo colonne con altre tipologie di dati ed effettuari query anche su questi ultimi.
+
 # Possibili comandi da CMD
 
  -s [select] passare i campi della select divisi da virgola ES: -s valore1,valore2  se non impostato eseguira la select su tutti i campi Select *
@@ -23,12 +25,12 @@ php index.php -w customer=1 -o date=DESC
 
 Elencare tutte le transazioni di un singolo customer ordinate per data ma senza visualizzare il campo data in TimeT
 
-php test.php -s customer,date,value  -w customer=1 -o date=DESC
+php index.php -s customer,date,value  -w customer=1 -o date=DESC
 
 --------------------------------------------------------------------------------------------------------------
 Elencare tutte le transazioni ordinate per data
 
-php test.php -s customer,date,value  -o customer=DESC
+php index.php -s customer,date,value  -o customer=DESC
 
 
 
