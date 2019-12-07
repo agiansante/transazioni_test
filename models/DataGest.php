@@ -28,11 +28,11 @@ class Gest_data
 											$riga[$key]=$value;	
 		
 												// Da verificare-------------------------------
-												/*if (array_key_exists("timeT".$key, $dato))
+												if (array_key_exists("timeT".$key, $dato))
 												{
 												$keyT="timeT".$key;
-												$riga[$keyT]=$value;	
-												}*/
+												$riga[$keyT]=$dato["timeT".$key];	
+												}
 												// Da verificare-------------------------------
 												
 											}		
@@ -125,8 +125,13 @@ class Gest_data
 								$data_src= $data;
 
 
-								if (array_key_exists("timeT".$key, $data_src))
-								$key="timeT".$key;	
+								if (array_key_exists("timeT".$key, $data_src[0])===true)
+								{
+									
+									$key="timeT".$key;
+									
+								}
+									
 
 
 
@@ -136,7 +141,7 @@ class Gest_data
 								usort($data_src, function ($a,$b) use ($key,$order) 
 								{
 
-
+									
 									if ($a[$key] == $b[$key]) return 0;
 
 									if ($order=="DESC")

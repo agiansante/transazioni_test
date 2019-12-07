@@ -32,7 +32,7 @@ foreach ($arry_result as $dato)
 					$value=$obj_elab_cmd->convert_currency_to_eu($value) . " (orig: $orig_value)";
 				}
 				
-				
+				if (substr($key,0,5)!="timeT")
 				echo " $key: $value ";
 		}
 		echo "\n";

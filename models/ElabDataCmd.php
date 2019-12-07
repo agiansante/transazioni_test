@@ -39,6 +39,10 @@ class ElabDataCmd extends Gest_data
 			 $ret_array_select=$this->_base_data;   
 		   }
 		   
+		   /*echo "<pre>";
+		   print_r($ret_array_select);
+		   echo "</pre>";*/
+		   
 		   if (isset($data_get["w"]))
 		   {
 			 $parametri_where=explode("=", $data_get["w"]);  
