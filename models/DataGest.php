@@ -3,7 +3,47 @@
 
 class Gest_data
 {
-    
+    				//Select dato l'array di base restituisce solo l'array con i campi scelti nella select
+					//parametri in ingresso:
+					//data -> sorgente dati (tipo array)
+					//key -> elementi della select (tipo array)
+	
+					public function select_arr($data,$key_select) 
+					{
+
+
+										$data_src= $data;
+										$arr_group = array();
+
+
+							foreach ($data_src as $dato) 
+							{
+
+										foreach ($dato as $key => $value) 
+										{
+											if ( in_array($key, explode(",", $key_select)) )
+											{
+											$riga[$key]=$value;	
+		
+												// Da verificare-------------------------------
+												/*if (array_key_exists("timeT".$key, $dato))
+												{
+												$keyT="timeT".$key;
+												$riga[$keyT]=$value;	
+												}*/
+												// Da verificare-------------------------------
+												
+											}		
+										}
+
+							$righe[]=$riga;			
+
+							}	
+						
+						
+
+						return $righe;
+					}
 	
 	
 					//Group by sui valori dell'array

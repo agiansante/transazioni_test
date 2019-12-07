@@ -1,4 +1,9 @@
-<?php 
+<?php
+mb_internal_encoding("UTF-8");
+
+@require("models/DataAccess.php");
+@require("models/DataGest.php");
+@require("models/ElabDataCmd.php");
 
 
 $src_dat = array('file'=>'data.csv','delimiter'=>';');  
@@ -8,44 +13,33 @@ $obj_access->read_data_csv();
 
 
 
+$data_base=$obj_access->data_ret;
+$obj_elab_cmd = new ElabDataCmd($data_base);
 
+$arry_result=$obj_elab_cmd->get_data($argc,$argv);
 
-$obj_gest = new Gest_data();
-
-if ($filter==""){
-
-	
-	$costumers=$obj_gest->group_by_arr($obj_access->data_ret,'customer');
-
-	echo "\n";
-	foreach ($costumers as $costumer)
+foreach ($arry_result as $dato)
 	{
 		
-		echo "Customer: $costumer\nElenco transazioni:\n";
-		$dati_ret=$obj_gest->order_by_key_arr($obj_gest->filter_by_value_arr($obj_access->data_ret,'customer',$costumer),'date');
-
-		foreach ($dati_ret as $dato)
+		echo "-->";
+		foreach ($dato as $key => $value) 
 		{
-			echo "-->Data transazione: $dato[date] - Importo ". $obj_gest->convert_currency_to_eu($dato['value'])."\n";
+			   preg_match("/([^0-9.,]*)([0-9.,]*)([^0-9.,]*)/", $value, $simbolo);
+			
+			   if ( in_array($simbolo[1], array('£','$')))  
+				{
+					$orig_value=$value;
+					$value=$obj_elab_cmd->convert_currency_to_eu($value) . " (orig: $orig_value)";
+				}
+				
+				
+				echo " $key: $value ";
 		}
-		
-	echo "\n";
-	}
-	
-	
-}else{
-
-
-
-	echo "\nCustomer: $filter\nElenco transazioni:\n";
-	$dati_ret=$obj_gest->order_by_key_arr($obj_gest->filter_by_value_arr($obj_access->data_ret,'customer',$filter),'date');
-
-	foreach ($dati_ret as $dato)
-	{
-		echo "Data transazione: $dato[date] - Importo ". $obj_gest->convert_currency_to_eu($dato['value'])."\n";
+		echo "\n";
 	}
 
-}
+
+
 
 
 

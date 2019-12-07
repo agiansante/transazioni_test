@@ -1,5 +1,7 @@
 <?php 
 
+@require("models/DataAccess.php");
+@require("models/DataGest.php");
 
 $src_dat = array('file'=>'data.csv','delimiter'=>';');  
 $obj_access = new Acces_data($src_dat);
